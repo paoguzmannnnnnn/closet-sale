@@ -1,54 +1,72 @@
 # The Drop — Closet Sale App
 
-App para organizar inventario de closet sale con amigas.
+A full-stack web app to organize and run a closet sale with friends: track inventory, mark items as sold, and see how much each person has raised in real time.
 
-## Setup local
+**Stack:** React · Supabase · Vercel
 
-### 1. Instalar dependencias
-```bash
+🔗 **Live demo:** https://closet-sale.vercel.app
+*(Note: hosted on a free tier — if the link is down, the app can be run locally with the steps below.)*
+
+---
+
+## Features
+
+- Add, edit, and delete items with a photo or an emoji
+- Upload photos from camera or gallery
+- Mark items as sold
+- See total raised per person
+- Global dashboard showing each person's progress
+- Supports up to 6 people, each with their own color
+
+---
+
+## Tech stack
+
+- **Frontend:** React
+- **Backend / Database:** Supabase (PostgreSQL + storage)
+- **Hosting:** Vercel
+
+---
+
+## Run it locally
+
+### 1. Install dependencies
+
+```
 npm install
 ```
 
-### 2. Variables de entorno
-El archivo `.env` ya tiene tus credenciales de Supabase. No lo subas a GitHub (ya está en .gitignore).
+### 2. Set up environment variables
 
-### 3. Correr en local
-```bash
+Copy `.env.example` to a new file called `.env` and fill in your own Supabase credentials:
+
+```
+REACT_APP_SUPABASE_URL=your-supabase-url
+REACT_APP_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+> `.env` is git-ignored on purpose — never commit your real credentials.
+
+### 3. Start the app
+
+```
 npm start
 ```
-Abre http://localhost:3000
+
+Then open http://localhost:3000
 
 ---
 
-## Deploy en Vercel
+## Deploy on Vercel
 
-### 1. Subir a GitHub
-```bash
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/closet-sale.git
-git push -u origin main
-```
+1. Push the project to GitHub.
+2. Go to vercel.com and sign in with GitHub.
+3. Click **Add New Project** and import the `closet-sale` repo.
+4. Under **Environment Variables**, add:
+   - `REACT_APP_SUPABASE_URL`
+   - `REACT_APP_SUPABASE_ANON_KEY`
+5. Click **Deploy**.
 
-### 2. Conectar Vercel
-1. Ve a vercel.com e inicia sesión con GitHub
-2. Clic en "Add New Project"
-3. Importa el repo `closet-sale`
-4. En **Environment Variables** agrega:
-   - `REACT_APP_SUPABASE_URL` → tu Supabase URL
-   - `REACT_APP_SUPABASE_ANON_KEY` → tu Supabase anon key
-5. Clic en "Deploy"
-
-¡Listo! Vercel te da un link tipo `https://closet-sale-xxx.vercel.app`
+Vercel will give you a live URL like `https://closet-sale-xxx.vercel.app`.
 
 ---
-
-## Funcionalidades
-- Agregar/editar/eliminar items con foto o emoji
-- Subir fotos desde cámara o galería
-- Marcar items como vendidos
-- Ver total recaudado por amiga
-- Dashboard global con progreso de cada amiga
-- Hasta 6 amigas con colores distintos
